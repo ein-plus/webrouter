@@ -20,9 +20,6 @@ worker:
     - GRAPHITE_PORT=2003
   memory: 256m
   volumes:
-    - /etc/nginx/nginx.conf
-    - /etc/nginx/proxy.conf
-    - /etc/nginx/default.conf
     - /etc/nginx/conf.d
     - /etc/nginx/upstreams
     - /etc/nginx/locations
