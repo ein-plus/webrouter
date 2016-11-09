@@ -27,7 +27,6 @@ worker:
     - /etc/nginx/upstreams
     - /etc/nginx/locations
     - /etc/nginx/buffer
-    - /etc/nginx/ssl
     - /var/log/nginx
     - /var/log/watcher
     - /var/log/supervisor
