@@ -1,12 +1,13 @@
 appname: webrouter
 
 build:
-  base: laincloud/centos-lain-webrouter:20160503
+  base: laincloud/centos-lain-webrouter:20170227
   prepare:
-    version: "200"
+    version: "201"
     script:
-      - pip install -r pip-req.txt
+      - pip install -r pip-req.txt --index-url https://pypi.doubanio.com/simple
   script:
+    - cp logrotate.d/* /etc/logrotate.d/
 
 test:
   script:
@@ -19,6 +20,7 @@ worker:
     - LAINLET_PORT=9001
     - GRAPHITE_PORT=2003
   memory: 256m
+  setup_time: 60
   volumes:
     - /etc/nginx/conf.d
     - /etc/nginx/upstreams
